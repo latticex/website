@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/*
+   Typography
+   ========================================================================== */
+
+/* font */
+$main-font                    : Times, Georgia, 'Times New Roman', serif;
+$title-font                   : Times, 'Roboto Slab', 'Oswald', sans-serif;
+$hand-write                   : Gochi Hand, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif;
+$monospace                    : Consolas, monospace !default;
+
+$para-font-family             : $main-font !default;
+$header-font-family           : $title-font !default;
+$caption-font-family          : $title-font !default;
+$fancy-font-family            : $hand-write !default;
+
+/* scale */
+$type-size-base               : 1.0em !default;
+$type-size-text               : 0.9em !default;/* top navigation; post title link; post top navigation; paragraphs */
+
+$type-size-0                  : 1.2em !default; /* site__name */
+$type-size-1                  : 1.1em !default; /* page__title */
+$type-size-2                  : 1.0em !default; /* post__title */
+$type-size-3                  : 0.9em !default;
+$type-size-4                  : 0.8em !default;
+$type-size-5                  : 0.7em !default;
+$type-size-6                  : 0.6em !default; /* post date */
+
+/* paragraphs */
+$para-margin-top              : 0.6em !default;
+$para-margin-bot              : 0.6em !default;
+$para-line-height             : 1.2em !default;
+
+/* titles in post or in other places */
+$title-margin-top             : 0.6em !default;
+$title-margin-bot             : 0.6em !default;
+$title-line-height            : 1.2em !default;
+
+/* page titles */ /* apply page__title */
+$page-title-margin-top        : 0.6em !default;
+$page-title-margin-bot        : 0.6em !default;
+$page-title-line-height       : 1.2em !default;
+$page-title-font-name         : $fancy-font-family !default;
+
+/* post entries */ /* apply page__meta and post__meta */
+$post-entry-date-margin-top   : 0.2em !default;
+$post-entry-date-margin-bot   : 0.8em !default;
+$post-entry-date-line-height  : 1em !default;
+$post-entry-date-font-size    : $type-size-5 !default;
+
+/* post title */ /* apply post__title */
+$post-title-margin-top        : 0em !default;
+$post-title-margin-bot        : 0.2em !default;
+$post-title-line-height       : 1em !default;
+$post-title-font-size         : $type-size-1 !default;
+
+/* list in post */ /* apply post__content */
+$post-list-margin-top         : 0.2em !default;
+$post-list-margin-bot         : 0.2em !default;
+$post-list-line-height        : 1em !default;
+$post-list-font-size          : $type-size-text !default;
+
+/* post path navigation */
+$post-path-font-size          : $type-size-text;
+$post-path-font-weight        : normal;
+$post-path-text-align         : left; /* left or center*/
+
+/* page navigation */
+$navi-text-align              : center !default;
+$navi-margin-top              : 0em !default;
+$navi-margin-bot              : 0em !default;
+
+/* menu list such as home post*/
+$menu-font                    : $header-font-family;
+$menu-line-height             : 1.4em !default;
+$menu-padding-top             : 0em !default;
+$menu-padding-bot             : 0em !default;
+$menu-padding-left            : 0.2em !default; /* set to 0em if $navi-text-align is left */
+$menu-padding-right           : 0.2em !default;
+
+/* avatar */
+$avatar-width                 : 5em !default;
+$avatar-height                : 5em !default; /* affect the space between page navigation and page content */
+
+/* footer */
+$footer-margin-top            : 1em !default; /* affect the space between page bottom and page footer */
+
+/*
+   Colors
+   ========================================================================== */
+
+/* main color */
+$latticex-red                 : #FC6C85 !default;
+$latticex-green               : #20B2AA !default;
+$latticex-blue                : #708090 !default;
+
+$white                        : #FFFFFF !default;
+$black                        : #000000 !default;
+$gray                         : #7A8288 !default;
+$text-color                   : #404040 !default;
+$highlight-color              : $latticex-red;
+$post-title-color             : $latticex-blue;
+
+$fancy-color                  : $latticex-red;
+$theme-color                  : $latticex-green;
+
+$background-color             : $white;
+$border-color                 : #B2B2B2 !default;
+$code-sidebar-border          : #CCCCCC !default;
+$code-background-color        : #F5F5F5 !default;
+$quote-background-color       : mix($white, $gray, 90%);
+$footer-background-color      : $white;
+
+/* links */
+$link-color                   : $latticex-green;
+$link-color-hover             : $latticex-red; 
+$link-color-visited           : mix($black, $latticex-green, 20%);
+$entry-link-color             : $text-color;
+$entry-link-color-hover       : $latticex-red;
+$site-name-color              : $fancy-color;
+$site-bio-color               : $text-color;
+$menu-link-color              : $theme-color;
+
+/*
+   Breakpoints
+   ========================================================================== */
+
+$small                        : 600px !default;
+$medium                       : 768px !default;
+$large                        : 1024px !default;
+
+$max-width                    : 660px !default;
+
+/*
+   Other
+   ========================================================================== */
+
+$default-padding              : 0px !default;
+$border-radius                : 0px !default;
+$global-transition            : all 0.1s ease-in-out !default;

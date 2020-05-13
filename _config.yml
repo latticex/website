@@ -1,0 +1,122 @@
+# Site Settings
+encoding                 : "utf-8"
+locale                   : "en"
+title                    : "LatticeX"
+title_separator          : "-"
+description              : "Accelerate the Lattice Boltzmann Method"
+favicon                  : "/assets/images/logo.png"
+avatar                   : "/assets/images/logo.png"
+url                      : "https://latticex.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+
+# Site Author
+author:
+  name                   : "LatticeX" # appears in the footer and atom feed
+
+comments                 : false # set it to false to disable comments
+disqus:
+  shortname              :
+
+atom_feed:
+  path                   : # blank (default) uses feed.xml
+
+og_image                 : "/assets/images/logo.png" # Open Graph/Twitter default site image, optional for seo and social sharing
+
+# Social sharing
+twitter:
+  username               : # optional, for social sharing
+
+# Analytics
+analytics:
+  google:
+    tracking_id          : # add your google tracking id here
+
+# Reading Files
+include:
+  - _pages
+# Files excluded from Jekyll builds
+exclude:
+- README.md
+- LICENSE
+- Gemfile
+- Gemfile.lock
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+# Outputting
+permalink: /post/:title
+
+pagination:
+  enabled: false
+  per_page: 2
+  permalink: "/page:num"
+  sort_reverse: true
+  collection: "posts"
+  trail: 
+    before: 2 # The number of links before the current page
+    after: 2  # The number of links after the current page
+
+timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+collections:
+  resource:
+    output: true
+    permalink: /:collection/:title
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-feed
+
+plugins:
+  - jekyll-paginate-v2
+  - jekyll-feed
+
+# Front matter defaults
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      comments: false
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      share: false
+  # _resource
+  - scope:
+      path: ""
+      type: resource
+    values:
+      layout: post
+      share: false

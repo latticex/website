@@ -1,0 +1,59 @@
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+
+.page {
+  margin-bottom: 1em;
+  float: none;
+  margin: 0 auto;
+  padding: 0em;
+  max-width: $max-width;
+  @include breakpoint($small) {
+    padding: 0 0rem;
+  }
+}
+
+.page__subtitle {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  color: $gray;
+}
+
+.page__share {
+  padding: 1em 0;
+}
+
+.page__item-title {
+  margin-bottom: 0em;
+  font-family: $para-font-family;
+  a {
+    border-bottom: 1px solid $theme-color;
+    color: $entry-link-color;
+    &:hover { color: $entry-link-color-hover; }
+  }
+}
+
+.page__title {
+  margin-top: $page-title-margin-top;
+  margin-bottom: $page-title-margin-bot;
+  line-height: $page-title-line-height;
+  font-family: $page-title-font-name;
+  color: $fancy-color;
+  & + .page__meta {
+    margin: 0em;
+  }
+}
+
+.page__meta {
+  margin-top: $post-entry-date-margin-top;
+  margin-bottom: $post-entry-date-margin-bot;
+  line-height: $post-entry-date-line-height;
+  color: mix($white, $gray, 20%);
+  font-size: $post-entry-date-font-size;
+  p {
+    margin: 0em;
+  }
+  a {
+    color: inherit;
+  }
+}

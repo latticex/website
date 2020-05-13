@@ -1,0 +1,13 @@
+---
+layout: page
+title: LatticeX Posts
+permalink: /post
+pagination:
+  enabled: false
+---
+
+{% for post in site.posts %}
+  {% include post-entry.html %}
+{% endfor %}
+
+<h1 class="page__title">More Posts</h1>

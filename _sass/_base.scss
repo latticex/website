@@ -1,0 +1,403 @@
+/* ==========================================================================
+   BASE ELEMENTS
+   ========================================================================== */
+
+%tab-focus {
+  /* default*/
+  outline: thin dotted #f89406;
+  /* webkit*/
+  outline: 5px auto #f89406;
+  outline-offset: 0px;
+}
+
+@mixin clearfix {
+  clear: both;
+
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+html {
+  /* sticky footer fix */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  font-family: $para-font-family;
+  font-size: $type-size-base;
+  line-height: 1.2em;
+  color: $text-color;
+
+  &.overflow--hidden {
+    /* when primary navigation is visible, the content in the background won't scroll */
+    overflow: hidden;
+  }
+}
+
+h0, h1, h2, h3, h4, h5, h6 {
+  margin-top: $title-margin-top;
+  margin-bottom: $title-margin-bot;
+  line-height: $title-line-height;
+  font-family: $header-font-family;
+  font-weight: normal;
+}
+
+h0 { /* used by site__name class */
+  font-size: $type-size-0;
+}
+
+h1 { /* used by page__title class */
+  font-size: $type-size-1;
+}
+
+h2 {
+  font-size: $type-size-2;
+}
+
+h3 {
+  font-size: $type-size-3;
+}
+
+h4 {
+  font-size: $type-size-4;
+}
+
+h5 {
+  font-size: $type-size-5;
+}
+
+h6 {
+  font-size: $type-size-6;
+}
+
+small, .small {
+  font-size: $type-size-6;
+}
+
+/* paragraph */
+p {
+  margin-top: $para-margin-top;
+  margin-bottom: $para-margin-bot;
+  line-height: $para-line-height;
+  font-family: $para-font-family;
+  font-size: $type-size-text;
+}
+
+/* paragraph highlight */
+highlight {
+  margin-top: $para-margin-top;
+  margin-bottom: $para-margin-bot;
+  line-height: $para-line-height;
+  font-family: $para-font-family;
+  font-size: $type-size-text;
+  color: $highlight-color;
+}
+
+u,
+ins {
+  text-decoration: none;
+  border-bottom: 1px solid $text-color;
+  a {
+    color: inherit;
+  }
+}
+
+del a {
+  color: inherit;
+}
+
+/* reduce orphans and widows when printing */
+
+p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
+  orphans: 3;
+  widows: 3;
+}
+
+/* abbreviations */
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none;
+  cursor: help;
+  border-bottom: 1px dotted $text-color;
+}
+
+/* blockquotes */
+
+blockquote {
+  background: $quote-background-color;
+  border-radius: 0em;
+  margin: 0em; 
+  padding: 0.5em 1em;
+
+  position: relative;
+}
+
+blockquote:before {
+  font-family: Georgia, serif;
+  font-style: italic;
+  display: block;
+  content: "\201C";
+  font-size: 2em;
+  position: absolute;
+  left: 0em;
+  top: 0.2em;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: $type-size-text;
+  display: block;
+  margin-top: 0.2em;
+  text-align: left;
+}
+ 
+blockquote cite:before {
+  content: "\2014 \2009";
+}
+
+blockquote p:last-child {
+  margin: 0em;
+}
+
+/* links */
+
+a {
+  text-decoration: none;
+  &:focus {
+    @extend %tab-focus;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+  
+  &:hover { color: $link-color-hover; }
+  &:hover > image { opacity: 0.8; }
+}
+
+/* code */
+$code-scaling-factor: 1.2;
+$sidebar-border-width: 0.2px;
+
+tt, code, kbd, samp, pre {
+  font-family: $monospace;
+}
+
+pre {
+  overflow-x: auto; /* add scrollbars to wide code blocks*/
+}
+
+li > code,
+figcaption > code,
+td > code {
+  margin: 0px;
+  padding: 0px 0px;
+  font-size: $type-size-text * $code-scaling-factor;
+  background: $code-background-color;
+  border: 1px solid $border-color;
+  border-radius: 0;
+
+  &:before, &:after {
+    letter-spacing: 0em;
+    content: "\00a0"; /* non-breaking space*/
+  }
+}
+
+pre {
+  padding: ($default-padding / 4) ($default-padding - $sidebar-border-width);
+  line-height: $para-line-height * $code-scaling-factor;
+  border-left: $sidebar-border-width solid $code-sidebar-border;
+
+  @media screen and (max-width: $max-width) {
+    margin-left:  0px;
+    margin-right: 0px;
+  }
+
+  // This ensures that code blocks don't get blown up to big sizes
+  // on iPhone displays.
+  -webkit-text-size-adjust: 100%;
+
+  // This ensures the first line of <pre> blocks doesn't have a funny indent
+  code {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+/* horizontal rule */
+
+hr {
+  display: block;
+  margin-top: $para-margin-top;
+  margin-bottom: $para-margin-bot;
+  border: 0;
+  border-top: 1px solid $border-color;
+}
+
+/* lists */
+
+ul li,
+ol li {
+  margin-bottom: $para-margin-bot;
+}
+
+li ul,
+li ol {
+  margin-top: $para-margin-top;
+}
+
+/*
+   Media and embeds
+   ========================================================================== */
+
+/* Figures and images */
+
+figure {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+          align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0.8em 0;
+
+  img,
+  iframe,
+  .fluid-width-video-wrapper {
+    margin-bottom: 0.4em;
+  }
+
+  img {
+    width: 100%;
+    border-radius: $border-radius;
+    -webkit-transition: $global-transition;
+    transition: $global-transition;
+  }
+
+  > a {
+    display: block;
+  }
+
+  &.half {
+    > a,
+    > img {
+      @include breakpoint($small) {
+        width: calc(50% - 0.1em);
+      }
+    }
+
+    figcaption {
+      width: 100%;
+    }
+  }
+
+  &.third {
+    > a,
+    > img {
+      @include breakpoint($small) {
+        width: calc(33.3333% - 0.1em);
+      }
+    }
+
+    figcaption {
+      width: 100%;
+    }
+  }
+}
+
+/* Figure captions */
+
+figcaption {
+  margin-bottom: $para-margin-bot;
+  color: mix($white, $text-color, 20%);
+  font-family: $caption-font-family;
+  font-size: $type-size-text;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid $border-color;
+    -webkit-transition: $global-transition;
+    transition: $global-transition;
+
+    &:hover {
+      color: $black;
+      border-bottom-color: $black;
+    }
+  }
+}
+
+
+/* Fix IE9 SVG bug */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+   Navigation lists
+   ========================================================================== */
+
+/**
+ * Removes margins, padding, and bullet points from navigation lists
+ *
+ * Example usage:
+ * <nav>
+ *    <ul>
+ *      <li><a href="#link-1">Link 1</a></li>
+ *      <li><a href="#link-2">Link 2</a></li>
+ *      <li><a href="#link-3">Link 3</a></li>
+ *    </ul>
+ *  </nav>
+ */
+ 
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* override white-space for nested lists */
+  ul li,
+  ol li {
+    margin-bottom: 0;
+  }
+
+  li ul,
+  li ol {
+    margin-top: 0;
+  }
+}
+
+/*
+   Global animation transition
+   ========================================================================== */
+
+
+b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, textarea, input[type="submit"], .btn, .highlight, .archive__item-teaser {
+  -webkit-transition: $global-transition;
+  transition: $global-transition;
+}
+
+input, textarea, input[type="submit"] {
+  font-family: $para-font-family;
+}

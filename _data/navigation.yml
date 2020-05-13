@@ -1,0 +1,17 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Post"
+    url: /post
+  - title: "Resource"
+    url: /resource
+  - title: "Project"
+    url: /project
+    children: 
+      - title: "Code"
+        url: /code
+      - title: "Book"
+        url: /book
+  - title: "Contact"
+    url: /contact

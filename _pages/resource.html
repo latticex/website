@@ -1,0 +1,9 @@
+---
+layout: page
+title: Good Resources
+permalink: /resource
+---
+
+{% for post in site.resource reversed %}
+  {% include post-entry.html %}
+{% endfor %}
